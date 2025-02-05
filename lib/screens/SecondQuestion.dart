@@ -22,6 +22,7 @@ class SecondQuestion extends StatefulWidget{
 /** SecondQuestionの状態を管理するクラス */
 class _SecondQuestionState extends State<SecondQuestion>{
   final hiveService = HiveService();   //Hiveサービスのインスタンス
+  String previous_question = '';       //前回の質問を保持する変数
   String question = '';               //現在の質問を保持する変数
   String firstWorry = '';             //最初の悩みを保持する変数
   List<String> questions = [];        //質問リストを保持する変数
@@ -63,7 +64,7 @@ class _SecondQuestionState extends State<SecondQuestion>{
    */
   void _loadData() {
     setState(() {
-      question = hiveService.getQuestion();
+      previous_question = hiveService.getQuestion();
       questions = hiveService.getQuestions();
       questionsAndChoices = hiveService.getQuestionsAndChoices();
       stageNumber = hiveService.getStageNumber();
@@ -164,10 +165,10 @@ step1:
 
 step2:
 {質問リスト}とstep1で生成した要素の中から相談者に対して問題解決の助けになる質問を１つ選んで{質問}に従い変数に入れる形式で生成してください。
-選んだ質問に対しての回答の選択肢を３つ生成して{選択肢}に従い変数に入れる形式で生成してください。
+選んだ質問に対しての回答の選択肢を4つ生成して{選択肢}に従い変数に入れる形式で生成してください。
 
 質問 = "質問={}"
-選択肢 = "選択肢={ , , ,}"
+選択肢 = "選択肢={ , , , }"
 ''';
       // リクエストボディの準備
       print('Preparing request body...'); //
@@ -215,7 +216,7 @@ step2:
     }
     await questionCount++;
     await hiveService.saveQuestionsData(questions, question);
-    await hiveService.saveQuestionsAndChoices(question, choice);
+    await hiveService.saveQuestionsAndChoices(previous_question, choice);
     await hiveService.saveChoices(choices);
     await hiveService.saveStageNumber(stageNumber, questionCount);
   }
@@ -282,6 +283,7 @@ step2:
               Text(widget.question), //前から選んだ質問といかけ
               SizedBox(height: 20),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch, //画面全体表示にする
                 //選択肢の分割、ボタンの生成
                 children: choices.map((choice) {
                   return ElevatedButton(
