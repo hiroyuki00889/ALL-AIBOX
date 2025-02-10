@@ -2,29 +2,7 @@
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-/** ストレージサービスのインターフェース。
- * アプリケーションのデータ永続化を担当する基本的な操作を定義
- */
-abstract class IStorageService {
-  Future<void> initHive();
-  Future<void> saveQuestionsData(List<String> questions, String question);
-  Future<void> saveQuestionsAndChoices(String newKey, String newValue);
-  Map<String, String> getQuestionsAndChoices();
-  List<String> getQuestions();
-  String getQuestion();
-  Future<void> saveFirstWorry(String firstWorry);
-  String getFirstWorry();
-  String getWorryInput();
-  Future<void> clearAllData();
-  Future<void> saveStageNumber(int stageNumber, int questionCount);
-  int getStageNumber();
-  int getQuestionCount();
-  Future<void> saveChoice(String choice);
-  String getChoice();
-  Future<void> saveChoices(List<String> choices);
-  List<String> getChoices();
-  Future<void> DeleteChoices();
-}
+
 
 /** Hiveのボックス名を定義する定数クラス */
 class HiveBoxNames {
@@ -33,7 +11,7 @@ class HiveBoxNames {
 }
 
 /** Hiveを使用したストレージサービスの実装クラス */
-class HiveService implements IStorageService {
+class HiveService {
   static final HiveService _instance = HiveService._internal();   //シングルトンインスタンス
   List<String> currentQuestions = [];                             //現在の質問リストを保持するフィールド
 

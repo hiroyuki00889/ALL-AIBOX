@@ -6,6 +6,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:test_flutter4/Hive.dart';
 import 'SecondQuestion.dart';
+import 'TaskTableScreen.dart';
+import 'ProcessDiagramScreen.dart';
+import 'dart:math';
 
 /**
  * 悩み相談の結果を表示するためのStatefulWidgetクラス
@@ -119,13 +122,14 @@ class _ResultState extends State<Result> {
 #この内容を実行してください
 {最初の悩みポスト}の問題を解決するためのアドバイスを問題の要素である{今までの質問と答え}を含めて考えて生成してください。
 生成する文章に変数名を出さないでください。
+
 ''';
 
       // リクエストボディの準備
       print('Preparing request body...'); // デバッグログ
       final body = jsonEncode({
         "model": "claude-3-5-sonnet-20240620",
-        "max_tokens": 2000,
+        "max_tokens": 8096,
         "messages": [
           {"role": "user", "content": prompt}
         ],
@@ -146,14 +150,18 @@ class _ResultState extends State<Result> {
       // レスポンスの処理
       print('Response received. Status code: ${response.statusCode}'); // デバッグログ
       if (response.statusCode == 200) {
-        print('Successful response. Processing data...'); // デバッグログ
         final data = jsonDecode(utf8.decode(response.bodyBytes));
-        print('Raw API response: ${data['content'][0]['text']}');
-        adviceText = data['content'][0]['text'];
-        print('Response processed successfully'); // デバッグログ
-      } else {
-        print('Error response. Body: ${response.body}'); // デバッグログ
-        throw Exception('Failed to load data: ${response.statusCode}, ${response.body}');
+        print('Complete API response: $data'); // レスポンス全体を確認
+
+        // レスポンスの構造を確認
+        if (data['content'] != null && data['content'].isNotEmpty) {
+          adviceText = data['content'][0]['text'] ?? '';
+          print('Advice text length: ${adviceText.length}');
+          print('First 100 characters: ${adviceText.substring(0, min(100, adviceText.length))}');
+          print('Last 100 characters: ${adviceText.substring(max(0, adviceText.length - 100))}');
+        } else {
+          throw Exception('Invalid response structure');
+        }
       }
     } catch (e, stackTrace) {
       // エラーハンドリング
@@ -167,29 +175,88 @@ class _ResultState extends State<Result> {
       print('API call completed'); // デバッグログ
     }
   }
-  
+
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('悩み・相談解決くん',
-            style: TextStyle(color: Colors.black),),
-          //backgroundColor: color,
+      appBar: AppBar(
+        title: Text(
+          '悩み・相談解決くん',
+          style: TextStyle(color: Colors.black),
         ),
-        body: Container(
-          //color: color.withOpacity(0.1),
-          child: Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                Text("結果画面"),
-                isLoading
-                    ? CircularProgressIndicator()
-                    : Text(adviceText)
-              ],
-            ),
+      ),
+      body: Container(
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Text("結果画面"),
+              Expanded(
+                child: isLoading
+                    ? Center(child: CircularProgressIndicator())
+                    : SingleChildScrollView(
+                  child: Text(
+                    adviceText,
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ),
+              ),
+              // ボタン群を追加
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      // タスク表作成画面への遷移
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TaskTableScreen(advice: adviceText),
+                        ),
+                      );
+                    },
+                    icon: Icon(Icons.task),
+                    label: Text('タスク表\n作成'),
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.all(12),
+                    ),
+                  ),
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      // 思考プロセス図作成画面への遷移
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProcessDiagramScreen(advice: adviceText),
+                        ),
+                      );
+                    },
+                    icon: Icon(Icons.account_tree),
+                    label: Text('思考プロセス\n図作成'),
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.all(12),
+                    ),
+                  ),
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      // ホームに戻る
+                      Navigator.popUntil(
+                          context,
+                              (route) => route.isFirst
+                      );
+                    },
+                    icon: Icon(Icons.home),
+                    label: Text('ホームに\n戻る'),
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.all(12),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
-        )
+        ),
+      ),
     );
   }
 }
