@@ -47,6 +47,7 @@ class _ResultState extends State<Result> {
    */
   @override
   void initState() {
+    super.initState();
     _loadData();
     Future.microtask(() => callClaude());
   }
@@ -181,7 +182,7 @@ class _ResultState extends State<Result> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '悩み・相談解決くん',
+          '悩み・相談解決くん:結果画面',
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -190,7 +191,6 @@ class _ResultState extends State<Result> {
           padding: EdgeInsets.all(16.0),
           child: Column(
             children: [
-              Text("結果画面"),
               Expanded(
                 child: isLoading
                     ? Center(child: CircularProgressIndicator())
