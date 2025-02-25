@@ -122,7 +122,9 @@ class _TaskTableScreenState extends State<TaskTableScreen> {
         final data = jsonDecode(utf8.decode(response.bodyBytes));
         print('Complete API response: $data'); // レスポンス全体を確認
 
-        // レスポンスの構造を確認
+        /* レスポンスの構造を確認
+         * TaskTableScreen用タスク抽出リスト変数化
+         */
         if (data['content'] != null && data['content'].isNotEmpty) {
           String rawText = data['content'][0]['text'] ?? '';
           setState(() {
@@ -144,7 +146,7 @@ class _TaskTableScreenState extends State<TaskTableScreen> {
       print('API call completed'); // デバッグログ
     }
   }
-
+    //タスク表のタスクの部分を抽出する関数（正規表現）
     List<String> extractTasks(String rawText) {
       RegExp regExp = RegExp(r'\d+\.\s(.*?)\n\s*- (.*?)\n', multiLine: true);
       return regExp.allMatches(rawText).map((match) {
