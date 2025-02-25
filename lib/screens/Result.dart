@@ -32,7 +32,7 @@ class _ResultState extends State<Result> {
   String input = '';                    // 現在の入力テキスト
   String question = '';                 // 現在の質問
   String firstWorry = '';              // 最初に入力された悩み
-  Map<String, String> questionAndChoice = {};    //質問と選択肢リストから選んだ文章のセットの変数
+  Map<String, String> questionsAndChoices = {};    //質問と選択肢リストから選んだ文章のセットの変数
   List<String> questions = [];         // 質問リスト
 
   // UI状態管理用の変数
@@ -60,7 +60,7 @@ class _ResultState extends State<Result> {
     setState(() {
       question = hiveService.getQuestion();
       questions = hiveService.getQuestions();
-      questionAndChoice = hiveService.getQuestionsAndChoices();
+      questionsAndChoices = hiveService.getQuestionsAndChoices();
       firstWorry = hiveService.getFirstWorry();
     });
   }
@@ -118,7 +118,7 @@ class _ResultState extends State<Result> {
 
 #変数設定
 最初の悩みポスト="$firstWorry"
-今までの質問と答え="$questionAndChoice"
+今までの質問と答え="$questionsAndChoices"
 
 #この内容を実行してください
 {最初の悩みポスト}の問題を解決するためのアドバイスを問題の要素である{今までの質問と答え}を含めて考えて生成してください。
