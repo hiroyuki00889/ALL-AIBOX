@@ -5,7 +5,7 @@ import 'dart:math';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:test_flutter4/Hive.dart';
+import 'package:test_flutter4/data/services/hive_service.dart';
 import 'Result.dart';
 import 'package:mermaid/mermaid.dart'as mermaid;
 import 'package:flutter_svg/flutter_svg.dart';
