@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import '../../../logic/providers/auth_provider.dart';
 import '../../../logic/providers/chat_provider.dart';
 import '../../../data/models/chat_message.dart';
-import '../../widgets/chat_bubble.dart';
+import '../../../widgets/chat_bubble.dart';
 
 class BuddyChatScreen extends StatefulWidget {
   final String buddyId;
