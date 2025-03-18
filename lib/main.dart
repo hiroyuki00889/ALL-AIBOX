@@ -3,8 +3,10 @@ import 'package:test_flutter4/presentation/screens/auth/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'core/router.dart';
+import 'data/services/claude_api_service.dart';
 import 'logic/providers/auth_provider.dart';
 import 'logic/providers/chat_provider.dart';
+import 'logic/providers/claude_chat_provider.dart';
 
 void main() async {
   // Initialize Hive for local storage
@@ -14,7 +16,23 @@ void main() async {
   await Hive.openBox('authBox');
   await Hive.openBox('chatBox');
 
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+        providers: [
+          // ClaudeApiServiceの作成
+          provider(
+            create: (_) => ClaudeApiService(),
+          ),
+          // ClaudeChatProviderの作成（ClaudeApiServiceに依存）
+          ChangeNotifierProvider(
+              create: (context) => ClaudeChatProvider(
+                context.read<ClaudeApiService>(),
+              ),
+          ),
+        ],
+    child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
