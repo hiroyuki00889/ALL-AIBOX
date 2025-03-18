@@ -31,7 +31,7 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/chat',
       builder: (context, state) {
-        final String buddyId = state.queryParameters['buddyId'] ?? '';
+        final String buddyId = state.pathParameters['buddyId'] ?? '';
         return BuddyChatScreen(buddyId: buddyId);
       },
     ),

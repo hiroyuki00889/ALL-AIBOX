@@ -1,172 +1,175 @@
 <mxfile host="65bd71144e">
     <diagram id="9ucJxSqqLEflozJvduEJ" name="フォルダ・ファイル構造">
-        <mxGraphModel dx="323" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="816" dy="200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="13" value="lib" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="30" y="50" width="60" height="30" as="geometry"/>
+                <mxCell id="13" value="lib" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="130" width="60" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="" style="endArrow=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="13">
+                <mxCell id="14" value="" style="endArrow=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="13" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="60" y="420" as="sourcePoint"/>
-                        <mxPoint x="100" y="90" as="targetPoint"/>
+                        <mxPoint x="490" y="500" as="sourcePoint"/>
+                        <mxPoint x="530" y="170" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="15" value="LoginRelated：ログイン等認証関係" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="90" y="130" width="230" height="30" as="geometry"/>
+                <mxCell id="15" value="LoginRelated：ログイン等認証関係" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="210" width="230" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="15">
+                <mxCell id="17" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="15" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="60" y="145" as="sourcePoint"/>
-                        <mxPoint x="110" y="60" as="targetPoint"/>
+                        <mxPoint x="490" y="225" as="sourcePoint"/>
+                        <mxPoint x="540" y="140" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="19" value="" style="endArrow=none;html=1;entryX=0.142;entryY=1.022;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="15">
+                <mxCell id="19" value="" style="endArrow=none;html=1;entryX=0.142;entryY=1.022;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="15" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="123" y="240" as="sourcePoint"/>
-                        <mxPoint x="440" y="150" as="targetPoint"/>
+                        <mxPoint x="553" y="320" as="sourcePoint"/>
+                        <mxPoint x="870" y="230" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="20" value="" style="endArrow=none;html=1;" edge="1" parent="1" target="21">
+                <mxCell id="20" value="" style="endArrow=none;html=1;" parent="1" target="21" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="130" y="180" as="sourcePoint"/>
-                        <mxPoint x="170" y="180" as="targetPoint"/>
+                        <mxPoint x="560" y="260" as="sourcePoint"/>
+                        <mxPoint x="600" y="260" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="21" value="SplashScreen.dart：スプラッシュ画面" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="140" y="165" width="220" height="30" as="geometry"/>
+                <mxCell id="21" value="SplashScreen.dart：スプラッシュ画面" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="570" y="245" width="220" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="22" value="" style="endArrow=none;html=1;" edge="1" parent="1" target="23">
+                <mxCell id="22" value="" style="endArrow=none;html=1;" parent="1" target="23" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="60" y="100" as="sourcePoint"/>
-                        <mxPoint x="100" y="100" as="targetPoint"/>
+                        <mxPoint x="490" y="180" as="sourcePoint"/>
+                        <mxPoint x="530" y="180" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="23" value="main.dart" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="70" y="85" width="60" height="30" as="geometry"/>
+                <mxCell id="23" value="main.dart" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="165" width="60" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="" style="endArrow=none;html=1;" edge="1" parent="1" target="25">
+                <mxCell id="24" value="" style="endArrow=none;html=1;" parent="1" target="25" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="130" y="210" as="sourcePoint"/>
-                        <mxPoint x="140" y="210" as="targetPoint"/>
+                        <mxPoint x="560" y="290" as="sourcePoint"/>
+                        <mxPoint x="570" y="290" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="25" value="LoginScreen.dart：ログイン画面" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="140" y="195" width="210" height="30" as="geometry"/>
+                <mxCell id="25" value="LoginScreen.dart：ログイン画面" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="570" y="275" width="210" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="26" value="" style="endArrow=none;html=1;" edge="1" parent="1" target="27">
+                <mxCell id="26" value="" style="endArrow=none;html=1;" parent="1" target="27" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="130" y="240" as="sourcePoint"/>
-                        <mxPoint x="150" y="240" as="targetPoint"/>
+                        <mxPoint x="560" y="320" as="sourcePoint"/>
+                        <mxPoint x="580" y="320" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="27" value="NewRegistrationScreen.dart：新規登録画面" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="140" y="225" width="260" height="30" as="geometry"/>
+                <mxCell id="27" value="NewRegistrationScreen.dart：新規登録画面" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="570" y="305" width="260" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="28" value="" style="endArrow=none;html=1;" edge="1" parent="1" target="29">
+                <mxCell id="28" value="" style="endArrow=none;html=1;" parent="1" target="29" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="60" y="280" as="sourcePoint"/>
-                        <mxPoint x="90" y="280" as="targetPoint"/>
+                        <mxPoint x="490" y="360" as="sourcePoint"/>
+                        <mxPoint x="520" y="360" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="29" value="BuddyChat" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="80" y="265" width="60" height="30" as="geometry"/>
+                <mxCell id="29" value="BuddyChat" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="345" width="60" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="" style="endArrow=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="29">
+                <mxCell id="30" value="" style="endArrow=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="29" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="110" y="340" as="sourcePoint"/>
-                        <mxPoint x="450" y="110" as="targetPoint"/>
+                        <mxPoint x="540" y="420" as="sourcePoint"/>
+                        <mxPoint x="880" y="190" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="32" value="SettingsScreen.dart" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="90" y="385" width="110" height="30" as="geometry"/>
+                <mxCell id="32" value="SettingsScreen.dart" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="465" width="110" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="34" value="BuddyChatScreen.dart" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="145" y="290" width="125" height="30" as="geometry"/>
+                <mxCell id="34" value="BuddyChatScreen.dart" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="575" y="370" width="125" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="35" value="" style="endArrow=none;html=1;" edge="1" parent="1" target="36">
+                <mxCell id="35" value="" style="endArrow=none;html=1;" parent="1" target="36" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="110" y="335" as="sourcePoint"/>
-                        <mxPoint x="140" y="370" as="targetPoint"/>
+                        <mxPoint x="540" y="415" as="sourcePoint"/>
+                        <mxPoint x="570" y="450" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="36" value="PastBuddyChatScreen.dart" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="145" y="320" width="155" height="30" as="geometry"/>
+                <mxCell id="36" value="PastBuddyChatScreen.dart" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="575" y="400" width="155" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="37" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="34">
+                <mxCell id="37" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="34" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="110" y="305" as="sourcePoint"/>
-                        <mxPoint x="450" y="200" as="targetPoint"/>
+                        <mxPoint x="540" y="385" as="sourcePoint"/>
+                        <mxPoint x="880" y="280" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="38" value="" style="endArrow=none;html=1;" edge="1" parent="1" target="39">
+                <mxCell id="38" value="" style="endArrow=none;html=1;" parent="1" target="39" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="60" y="370" as="sourcePoint"/>
-                        <mxPoint x="110" y="370" as="targetPoint"/>
+                        <mxPoint x="490" y="450" as="sourcePoint"/>
+                        <mxPoint x="540" y="450" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="39" value="HomeScreen.dart" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-                    <mxGeometry x="90" y="355" width="110" height="30" as="geometry"/>
+                <mxCell id="39" value="HomeScreen.dart" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="435" width="110" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="40" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="32">
+                <mxCell id="40" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="32" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="60" y="400" as="sourcePoint"/>
-                        <mxPoint x="450" y="200" as="targetPoint"/>
+                        <mxPoint x="490" y="480" as="sourcePoint"/>
+                        <mxPoint x="880" y="280" as="targetPoint"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="41" value="&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;lib&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|- main.dart&amp;nbsp; # アプリのエントリーポイント&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|- core/&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|- theme.dart&amp;nbsp; # アプリのテーマ管理&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|- router.dart&amp;nbsp; # 画面遷移を一元管理（go_routerを利用する場合など）&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|- data/&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|- models/&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- user.dart&amp;nbsp; # ユーザー情報のデータモデル&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- chat_message.dart&amp;nbsp; # チャットメッセージのデータモデル&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|- services/&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- auth_service.dart&amp;nbsp; # 認証関連の処理（Firebase, Hive等）&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- chat_service.dart&amp;nbsp; # チャットの送受信や保存処理&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- hive_service.dart&amp;nbsp; # Hiveデータ管理&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|- logic/&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|- providers/&amp;nbsp; # Provider, Riverpod, Bloc などの状態管理&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- auth_provider.dart&amp;nbsp; # ログイン状態を管理&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- chat_provider.dart&amp;nbsp; # チャットデータを管理&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|- presentation/&amp;nbsp; # UIに関するフォルダ&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|- screens/&amp;nbsp; # 画面ごとに分割&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- auth/&amp;nbsp; # 認証関連の画面&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- login_screen.dart&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- new_registration_screen.dart&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- splash_screen.dart&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- home/&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- home_screen.dart&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- chat/&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- buddy_chat_screen.dart&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- past_buddy_chat_screen.dart&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- settings/&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- settings_screen.dart&amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|- widgets/&amp;nbsp; # 再利用可能なUIコンポーネントをまとめる&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- chat_bubble.dart&amp;nbsp; # チャットメッセージの吹き出し&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;|&amp;nbsp; &amp;nbsp;|&amp;nbsp; &amp;nbsp;|- custom_button.dart&amp;nbsp; # 共通ボタン&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="70" width="420" height="475" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
     <diagram id="aRfhFLT_BcshqjKr9_iO" name="データフロー図">
-        <mxGraphModel dx="816" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1517" dy="657" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-1" value="TaskTableScreen.dartデータフロー図" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="10" y="20" width="220" height="30" as="geometry"/>
+                    <mxGeometry x="580" y="640" width="220" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-8" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="pfKSe6MhSHscrfDLDIdz-2" target="pfKSe6MhSHscrfDLDIdz-3" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-2" value="Result.dart&lt;br&gt;adviceText" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="30" y="80" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="590" y="700" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-10" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="pfKSe6MhSHscrfDLDIdz-3" target="pfKSe6MhSHscrfDLDIdz-9" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-3" value="TaskTable...dart&lt;br&gt;(wigitStateful)advice" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="190" y="80" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="750" y="700" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-12" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.16;entryY=0.55;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="pfKSe6MhSHscrfDLDIdz-9" target="pfKSe6MhSHscrfDLDIdz-11" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-9" value="callClaudeプロンプトwigit.advice" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="190" y="160" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="750" y="780" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-17" style="edgeStyle=none;html=1;exitX=0.13;exitY=0.77;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" parent="1" source="pfKSe6MhSHscrfDLDIdz-11" target="pfKSe6MhSHscrfDLDIdz-13" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-11" value="ClaudeAPI" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="340" y="150" width="120" height="80" as="geometry"/>
+                    <mxGeometry x="900" y="770" width="120" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-22" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;" parent="1" source="pfKSe6MhSHscrfDLDIdz-13" target="pfKSe6MhSHscrfDLDIdz-21" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-13" value="callClaude&lt;br&gt;tasks[]" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="190" y="240" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="750" y="860" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-19" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontSize=12;" parent="1" source="pfKSe6MhSHscrfDLDIdz-18" target="pfKSe6MhSHscrfDLDIdz-13" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-18" value="extractTasks(rawText)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontSize=12;" parent="1" vertex="1">
-                    <mxGeometry x="350" y="240" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="910" y="860" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-20" value="タスク表抽出関数" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
-                    <mxGeometry x="480" y="240" width="100" height="30" as="geometry"/>
+                    <mxGeometry x="1040" y="860" width="100" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-21" value="Build&lt;br&gt;ListView,Card" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" parent="1" vertex="1">
-                    <mxGeometry x="190" y="330" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="750" y="950" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-23" value="ProcessDiagramScreen.dartデータフロー図" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
                     <mxGeometry x="10" y="640" width="250" height="30" as="geometry"/>
@@ -188,6 +191,63 @@
                 </mxCell>
                 <mxCell id="pfKSe6MhSHscrfDLDIdz-29" value="q...AndC...から質問と選択を分けて？構造図として表示する" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
                     <mxGeometry x="270" y="660" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-1" value="claude_api_service.dart　データフロー図" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="10" width="290" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-4" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+                    <mxGeometry x="10" y="40" width="590" height="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-5" value="クラスclaude_api_service" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="JVTlXHw-7Xtz8h1ackMm-4">
+                    <mxGeometry width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-2" value="プロンプト文章A" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="JVTlXHw-7Xtz8h1ackMm-4">
+                    <mxGeometry x="170" y="180" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-7" value="" style="swimlane;startSize=0;" vertex="1" parent="JVTlXHw-7Xtz8h1ackMm-4">
+                    <mxGeometry x="20" y="30" width="500" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-8" value="Futer&amp;lt;String&amp;gt; sendMessage(String message) async { }&lt;div&gt;&lt;br style=&quot;color: rgb(63, 63, 63); text-align: left; text-wrap-mode: wrap;&quot;&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="JVTlXHw-7Xtz8h1ackMm-7">
+                    <mxGeometry width="320" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-15" value="プロンプト文章B" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="JVTlXHw-7Xtz8h1ackMm-4">
+                    <mxGeometry x="339" y="180" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-16" value="相談メッセージ" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="JVTlXHw-7Xtz8h1ackMm-4">
+                    <mxGeometry x="10" y="200" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-17" value="&amp;lt;&amp;lt; interface &amp;gt;&amp;gt;&lt;div&gt;CustomApiService&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="240" width="320" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-19" value="Item 2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="JVTlXHw-7Xtz8h1ackMm-17">
+                    <mxGeometry y="30" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-20" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Futer&amp;lt;String&amp;gt; sendMessage(String message) async { }&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="JVTlXHw-7Xtz8h1ackMm-17">
+                    <mxGeometry y="60" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-30" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Futer&amp;lt;String&amp;gt; sendMessage(String message) async { }&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="JVTlXHw-7Xtz8h1ackMm-17">
+                    <mxGeometry y="90" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-25" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="JVTlXHw-7Xtz8h1ackMm-21" target="JVTlXHw-7Xtz8h1ackMm-17">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-21" value="claude_api_service" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="880" y="40" width="320" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-22" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="JVTlXHw-7Xtz8h1ackMm-21">
+                    <mxGeometry y="30" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-23" value="Item 2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="JVTlXHw-7Xtz8h1ackMm-21">
+                    <mxGeometry y="60" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-24" value="Item 3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="JVTlXHw-7Xtz8h1ackMm-21">
+                    <mxGeometry y="90" width="320" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-31" value="機能：相談メッセージ文章からプロンプトの文章と使用する変数、保存する変数を変えたAPI通信関数を実行する" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="710" y="10" width="610" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVTlXHw-7Xtz8h1ackMm-32" value="実装するプロンプト：&lt;div&gt;・相談の深刻度が高いとき、話を聞くようにするプロンプト&lt;/div&gt;&lt;div&gt;・話し相手として話しかけた時、話を続けるようにするプロンプト&lt;/div&gt;&lt;div&gt;・悩みの解決を求めているとき、助言をするプロンプト&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;処理手順：&lt;/div&gt;&lt;div&gt;・メッセージの文章から３つのプロンプトのどれを使うかの判断のプロンプトを送って、帰ってきた結果からもう一度プロンプトとメッセージを送る&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="1320" y="40" width="330" height="250" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

@@ -1,0 +1,2 @@
+C:/Users/mh8no/sub_YOURBUDDY_APP/android/app/.cxx/Debug/2w5u6c2i/x86/CMakeFiles/edit_cache.dir
+C:/Users/mh8no/sub_YOURBUDDY_APP/android/app/.cxx/Debug/2w5u6c2i/x86/CMakeFiles/rebuild_cache.dir
