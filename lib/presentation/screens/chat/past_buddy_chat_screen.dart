@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../../logic/providers/auth_provider.dart';
-import '../../../logic/providers/chat_provider.dart';
+//import '../../../logic/providers/chat_provider.dart';
 
 class PastBuddyChatScreen extends StatefulWidget {
   const PastBuddyChatScreen({Key? key}) : super(key: key);
@@ -23,11 +23,10 @@ class _PastBuddyChatScreenState extends State<PastBuddyChatScreen> {
 
   void _loadPastChats() {
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
-    final chatProvider = Provider.of<ChatProvider>(context, listen: false);
 
     if (authProvider.currentUser != null) {
       setState(() {
-        _buddyIds = chatProvider.getBuddyIds(authProvider.currentUser!.id);
+        //_buddyIds = chatProvider.getBuddyIds(authProvider.currentUser!.id);
         _isLoading = false;
       });
     } else {

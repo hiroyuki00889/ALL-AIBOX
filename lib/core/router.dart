@@ -29,11 +29,8 @@ final appRouter = GoRouter(
       builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
-      path: '/chat',
-      builder: (context, state) {
-        final String buddyId = state.pathParameters['buddyId'] ?? '';
-        return BuddyChatScreen(buddyId: buddyId);
-      },
+      path: '/buddy_chat',
+      builder: (context, state) => const BuddyChatScreen(),
     ),
     GoRoute(
       path: '/past-chats',

@@ -2,25 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:test_flutter4/presentation/screens/auth/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'core/router.dart';
 import 'data/services/claude_api_service.dart';
 import 'logic/providers/auth_provider.dart';
-import 'logic/providers/chat_provider.dart';
 import 'logic/providers/claude_chat_provider.dart';
 
 void main() async {
-  // Initialize Hive for local storage
-  await Hive.initFlutter();
-
-  // Open Hive boxes for storing data
+  await Hive.initFlutter();               // Hiveローカルストレージを初期化
+  await dotenv.load(fileName:".env");     // dotenvを初期化
+  // HiveBoxを開く
   await Hive.openBox('authBox');
   await Hive.openBox('chatBox');
 
   runApp(
     MultiProvider(
         providers: [
-          // ClaudeApiServiceの作成
-          provider(
+          // 先に依存関係となるサービスを提供
+          Provider<ClaudeApiService>(
             create: (_) => ClaudeApiService(),
           ),
           // ClaudeChatProviderの作成（ClaudeApiServiceに依存）
@@ -43,7 +42,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthProvider()),
-        ChangeNotifierProvider(create: (_) => ChatProvider()),
+
       ],
       child: MaterialApp.router(
         title: 'YOURBUDDY',
