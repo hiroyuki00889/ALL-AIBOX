@@ -13,17 +13,15 @@ class ChatBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isUserMessage = message.type == MessageType.sent;
-
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Row(
-        mainAxisAlignment: isUserMessage
+        mainAxisAlignment: message.isUserMessage
             ? MainAxisAlignment.end
             : MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          if (!isUserMessage)
+          if (!message.isUserMessage)
             const CircleAvatar(
               radius: 16,
               child: Icon(Icons.person, size: 20),
@@ -35,7 +33,7 @@ class ChatBubble extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
               decoration: BoxDecoration(
-                color: isUserMessage
+                color: message.isUserMessage
                     ? AppTheme.chatBubbleGreen
                     : AppTheme.chatBubbleBeige,
                 borderRadius: BorderRadius.circular(16),
@@ -46,7 +44,7 @@ class ChatBubble extends StatelessWidget {
                   Text(
                     message.content,
                     style: TextStyle(
-                      color: isUserMessage ? Colors.white : Colors.black,
+                      color: message.isUserMessage ? Colors.white : Colors.black,
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -54,7 +52,7 @@ class ChatBubble extends StatelessWidget {
                     DateFormat('HH:mm').format(message.timestamp),
                     style: TextStyle(
                       fontSize: 10,
-                      color: isUserMessage
+                      color: message.isUserMessage
                           ? Colors.white.withOpacity(0.7)
                           : Colors.black.withOpacity(0.5),
                     ),
@@ -66,7 +64,7 @@ class ChatBubble extends StatelessWidget {
 
           const SizedBox(width: 8),
 
-          if (isUserMessage)
+          if (message.isUserMessage)
             const CircleAvatar(
               radius: 16,
               child: Icon(Icons.person, size: 20),
