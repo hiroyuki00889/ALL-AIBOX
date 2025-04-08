@@ -14,7 +14,13 @@ class ClaudeApiService {
   final String model = 'claude-3-7-sonnet-20250219';
 
   // コンストラクタでAPIキーを初期化
-  ClaudeApiService() : apiKey = dotenv.env['API_KEY'] ?? '';
+  ClaudeApiService() : apiKey = dotenv.env['API_KEY'] ?? ''{
+    // デバッグ用（本番環境では削除すること）
+    print('API Key: ${apiKey.isNotEmpty ? "設定されています" : "空です"}');
+    if (apiKey.isEmpty) {
+      print('警告: API キーが設定されていません。.env ファイルを確認してください。');
+    }
+  }
 
   // 会話の状況に応じて適切なプロンプトを選択する関数
   String selectAppropriatePrompt(String latestMessage, List<Map<String, dynamic>> history) {
@@ -129,6 +135,9 @@ class ClaudeApiService {
         headers: headers,
         body: body,
       );
+      // デバック用
+      print('レスポンスコード: ${response.statusCode}');
+      print('レスポンスボディ: ${response.body}');  // センシティブ情報に注意
 
       // レスポンスの処理
       if (response.statusCode == 200) {
@@ -138,7 +147,9 @@ class ClaudeApiService {
         // エラーハンドリング
         throw Exception('APIリクエスト失敗: ${response.statusCode} ${response.body}');
       }
-    } catch (e) {
+    } catch (e, stackTrace) {
+      print('エラーの詳細: $e');
+      print('スタックトレース: $stackTrace');
       // 例外処理
       throw Exception('メッセージ送信中にエラー発生： $e');
     }

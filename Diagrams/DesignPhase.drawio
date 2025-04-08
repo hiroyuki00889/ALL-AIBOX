@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="9ucJxSqqLEflozJvduEJ" name="フォルダ・ファイル構造">
-        <mxGraphModel dx="986" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="816" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -344,66 +344,66 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-1" value="チャット機能" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-1" value="チャット機能" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="10" width="80" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-2" value="ClaudeChatProvider" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-2" value="ClaudeChatProvider" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="130" y="110" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-17" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ABFyu2Jb3F_MFs59AVdA-3" target="ABFyu2Jb3F_MFs59AVdA-15">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-17" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ABFyu2Jb3F_MFs59AVdA-3" target="ABFyu2Jb3F_MFs59AVdA-15" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-3" value="チャット画面" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-3" value="チャット画面" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="230" y="240" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-10" style="edgeStyle=none;html=1;exitX=0.13;exitY=0.77;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ABFyu2Jb3F_MFs59AVdA-4" target="ABFyu2Jb3F_MFs59AVdA-2">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-10" style="edgeStyle=none;html=1;exitX=0.13;exitY=0.77;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ABFyu2Jb3F_MFs59AVdA-4" target="ABFyu2Jb3F_MFs59AVdA-2" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="150" y="90" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-12" style="edgeStyle=none;html=1;exitX=0.8;exitY=0.8;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ABFyu2Jb3F_MFs59AVdA-4" target="ABFyu2Jb3F_MFs59AVdA-3">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-12" style="edgeStyle=none;html=1;exitX=0.8;exitY=0.8;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ABFyu2Jb3F_MFs59AVdA-4" target="ABFyu2Jb3F_MFs59AVdA-3" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-4" value="ClaudeAPI" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-4" value="ClaudeAPI" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="170" y="10" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-7" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="ABFyu2Jb3F_MFs59AVdA-5" target="ABFyu2Jb3F_MFs59AVdA-2">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-7" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="ABFyu2Jb3F_MFs59AVdA-5" target="ABFyu2Jb3F_MFs59AVdA-2" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-5" value="ホーム画面" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-5" value="ホーム画面" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="130" y="190" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-11" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ABFyu2Jb3F_MFs59AVdA-6" target="ABFyu2Jb3F_MFs59AVdA-2">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-11" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ABFyu2Jb3F_MFs59AVdA-6" target="ABFyu2Jb3F_MFs59AVdA-2" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-6" value="Claude_API_Service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-6" value="Claude_API_Service" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="-40" y="110" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-8" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.13;entryY=0.77;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ABFyu2Jb3F_MFs59AVdA-2" target="ABFyu2Jb3F_MFs59AVdA-4">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-8" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.13;entryY=0.77;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="ABFyu2Jb3F_MFs59AVdA-2" target="ABFyu2Jb3F_MFs59AVdA-4" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-13" value="入力" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-13" value="入力" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="140" y="150" width="60" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-14" value="プロンプト判定、API送信" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-14" value="プロンプト判定、API送信" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="-20" y="80" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-46" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ABFyu2Jb3F_MFs59AVdA-15" target="ABFyu2Jb3F_MFs59AVdA-16">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-46" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="ABFyu2Jb3F_MFs59AVdA-15" target="ABFyu2Jb3F_MFs59AVdA-16" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-15" value="HiveBox(&quot;ChatBox&quot;)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-15" value="HiveBox(&quot;ChatBox&quot;)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="230" y="340" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-16" value="過去チャット画面" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-16" value="過去チャット画面" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="120" y="410" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-18" value="id,content,&lt;div&gt;isUserMessage,&lt;/div&gt;&lt;div&gt;timestamp&lt;/div&gt;&lt;div&gt;を保存する&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-18" value="id,content,&lt;div&gt;isUserMessage,&lt;/div&gt;&lt;div&gt;timestamp&lt;/div&gt;&lt;div&gt;を保存する&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="190" y="290" width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-20" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;id,content,&lt;/span&gt;&lt;div&gt;isUserMessage,&lt;/div&gt;&lt;div&gt;timestamp&lt;/div&gt;&lt;div&gt;を使って順番、ユーザーとBuddyの位置に表示&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-20" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;id,content,&lt;/span&gt;&lt;div&gt;isUserMessage,&lt;/div&gt;&lt;div&gt;timestamp&lt;/div&gt;&lt;div&gt;を使って順番、ユーザーとBuddyの位置に表示&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="280" y="140" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-22" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ABFyu2Jb3F_MFs59AVdA-21" target="ABFyu2Jb3F_MFs59AVdA-2">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-22" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ABFyu2Jb3F_MFs59AVdA-21" target="ABFyu2Jb3F_MFs59AVdA-2" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="100" y="215"/>
@@ -411,64 +411,64 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-21" value="chat_Message" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-21" value="chat_Message" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="-40" y="200" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-23" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;id,content,&lt;/span&gt;&lt;div&gt;isUserMessage,&lt;/div&gt;&lt;div&gt;timestamp&lt;/div&gt;&lt;div&gt;のデータクラス&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-23" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;id,content,&lt;/span&gt;&lt;div&gt;isUserMessage,&lt;/div&gt;&lt;div&gt;timestamp&lt;/div&gt;&lt;div&gt;のデータクラス&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="-30" y="160" width="110" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-25" value="ClaudeChatProvider" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-25" value="ClaudeChatProvider" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="480" y="10" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-26" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-26" value="" style="swimlane;startSize=0;" parent="1" vertex="1">
                     <mxGeometry x="480" y="10" width="200" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-27" value="メッセージ履歴形式に変換" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ABFyu2Jb3F_MFs59AVdA-26">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-27" value="メッセージ履歴形式に変換" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="ABFyu2Jb3F_MFs59AVdA-26" vertex="1">
                     <mxGeometry x="100" y="40" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-28" value="sendMessage" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ABFyu2Jb3F_MFs59AVdA-26">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-28" value="sendMessage" style="rounded=0;whiteSpace=wrap;html=1;" parent="ABFyu2Jb3F_MFs59AVdA-26" vertex="1">
                     <mxGeometry y="85" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-29" value="_messageHistory" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ABFyu2Jb3F_MFs59AVdA-26">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-29" value="_messageHistory" style="rounded=0;whiteSpace=wrap;html=1;" parent="ABFyu2Jb3F_MFs59AVdA-26" vertex="1">
                     <mxGeometry y="40" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-30" value="メッセージを送信、応答取得" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ABFyu2Jb3F_MFs59AVdA-26">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-30" value="メッセージを送信、応答取得" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="ABFyu2Jb3F_MFs59AVdA-26" vertex="1">
                     <mxGeometry x="100" y="85" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-31" value="clearChat" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ABFyu2Jb3F_MFs59AVdA-26">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-31" value="clearChat" style="rounded=0;whiteSpace=wrap;html=1;" parent="ABFyu2Jb3F_MFs59AVdA-26" vertex="1">
                     <mxGeometry y="140" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-32" value="会話履歴をクリアする" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ABFyu2Jb3F_MFs59AVdA-26">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-32" value="会話履歴をクリアする" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="ABFyu2Jb3F_MFs59AVdA-26" vertex="1">
                     <mxGeometry x="100" y="140" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-36" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ABFyu2Jb3F_MFs59AVdA-35" target="ABFyu2Jb3F_MFs59AVdA-3">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-36" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ABFyu2Jb3F_MFs59AVdA-35" target="ABFyu2Jb3F_MFs59AVdA-3" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-35" value="chat_Bubble" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-35" value="chat_Bubble" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="10" y="260" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-38" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-38" value="" style="swimlane;startSize=0;" parent="1" vertex="1">
                     <mxGeometry x="400" y="240" width="200" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-39" value="メッセージ履歴形式に変換" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ABFyu2Jb3F_MFs59AVdA-38">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-39" value="メッセージ履歴形式に変換" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="ABFyu2Jb3F_MFs59AVdA-38" vertex="1">
                     <mxGeometry x="100" y="40" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-40" value="sendMessage" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ABFyu2Jb3F_MFs59AVdA-38">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-40" value="sendMessage" style="rounded=0;whiteSpace=wrap;html=1;" parent="ABFyu2Jb3F_MFs59AVdA-38" vertex="1">
                     <mxGeometry y="85" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-41" value="_messageHistory" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ABFyu2Jb3F_MFs59AVdA-38">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-41" value="_messageHistory" style="rounded=0;whiteSpace=wrap;html=1;" parent="ABFyu2Jb3F_MFs59AVdA-38" vertex="1">
                     <mxGeometry y="40" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-42" value="メッセージを送信、応答取得" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ABFyu2Jb3F_MFs59AVdA-38">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-42" value="メッセージを送信、応答取得" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="ABFyu2Jb3F_MFs59AVdA-38" vertex="1">
                     <mxGeometry x="100" y="85" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-43" value="clearChat" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ABFyu2Jb3F_MFs59AVdA-38">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-43" value="clearChat" style="rounded=0;whiteSpace=wrap;html=1;" parent="ABFyu2Jb3F_MFs59AVdA-38" vertex="1">
                     <mxGeometry y="140" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-44" value="会話履歴をクリアする" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ABFyu2Jb3F_MFs59AVdA-38">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-44" value="会話履歴をクリアする" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="ABFyu2Jb3F_MFs59AVdA-38" vertex="1">
                     <mxGeometry x="100" y="140" width="100" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ABFyu2Jb3F_MFs59AVdA-45" value="BuddyChatScreen" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ABFyu2Jb3F_MFs59AVdA-38">
+                <mxCell id="ABFyu2Jb3F_MFs59AVdA-45" value="BuddyChatScreen" style="rounded=0;whiteSpace=wrap;html=1;" parent="ABFyu2Jb3F_MFs59AVdA-38" vertex="1">
                     <mxGeometry width="120" height="30" as="geometry"/>
                 </mxCell>
             </root>
