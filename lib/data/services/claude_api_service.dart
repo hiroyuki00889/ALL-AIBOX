@@ -11,6 +11,7 @@ class ClaudeApiService {
   // APIのエンドポイントとキー
   final apiUrl = Uri.parse('https://api.anthropic.com/v1/messages');
   final String apiKey;
+
   final String model = 'claude-3-7-sonnet-20250219';
 
   // コンストラクタでAPIキーを初期化

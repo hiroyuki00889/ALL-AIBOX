@@ -63,7 +63,6 @@ class ClaudeChatProvider extends ChangeNotifier {   // ChangeNotifier:アプリ�
         timestamp: DateTime.now(),
       );
       messages.add(assistantMessage); //チャット履歴<ChatMessage>のリストに追加
-
     } catch (e) {
       // エラー状態の設定
       error = e.toString();
