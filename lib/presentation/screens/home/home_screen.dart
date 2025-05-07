@@ -17,12 +17,13 @@ class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _scrollController = ScrollController();  // スクロール可能なウィジェット（ListView、GridView、SingleChildScrollViewなど）を制御するためのクラス
   String kariUser = 'ドラえもん';
 
-  void _sendMessage() {
+  void _sendMessage() async{
     final message = _messageController.text.trim();   // 文章入力から前後の空白を取り除いく
     if (message.isEmpty) return;
 
     // プロバイダーを取得してメッセージを送信する
     final chatProvider = Provider.of<ClaudeChatProvider>(context, listen: false);
+    if (!await chatProvider.checkInternetConnection()) return;
     chatProvider.sendMessage(message);
 
     _messageController.clear();

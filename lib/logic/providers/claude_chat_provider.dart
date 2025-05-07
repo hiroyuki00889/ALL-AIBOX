@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:uuid/uuid.dart';
 import '../../data/services/claude_api_service.dart';
@@ -22,6 +23,11 @@ class ClaudeChatProvider extends ChangeNotifier {   // ChangeNotifier:アプリ�
         'content': msg.content,
       };
     }).toList();
+  }
+
+  Future<bool> checkInternetConnection() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    return connectivityResult != ConnectivityResult.none;
   }
 
   /* メッセージを送信し、応答を取得する関数

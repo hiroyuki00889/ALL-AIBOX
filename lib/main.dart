@@ -3,6 +3,7 @@ import 'package:test_flutter4/presentation/screens/auth/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'core/router.dart';
 import 'data/services/claude_api_service.dart';
@@ -13,7 +14,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Hiveを使うなら必要、フレームワークとFlutterエンジン機能を結びつける
   //Flutter Engineの機能とは、プラットフォーム (Android, iOSなど) の画面の向きの設定やロケールなどです
   await Hive.initFlutter();               // Hiveローカルストレージを初期化
-  await Firebase.initializeApp();         // Firebase初期化
+  await Firebase.initializeApp(   // Firebase初期化
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await dotenv.load(fileName:".env");     // dotenvを初期化
   // HiveBoxを開く
   await Hive.openBox('authBox');

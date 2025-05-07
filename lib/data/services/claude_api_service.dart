@@ -16,10 +16,16 @@ class ClaudeApiService {
   // コンストラクタでAPIキーを初期化
   ClaudeApiService() : apiKey = dotenv.env['API_KEY'] ?? ''{
     // デバッグ用（本番環境では削除すること）
+    print("APIKEY:"+apiKey);
     print('API Key: ${apiKey.isNotEmpty ? "設定されています" : "空です"}');
     if (apiKey.isEmpty) {
       print('警告: API キーが設定されていません。.env ファイルを確認してください。');
     }
+  }
+
+  Future<bool> checkInternetConnection() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    return connectivityResult != ConnectivityResult.none;
   }
 
   // 会話の状況に応じて適切なプロンプトを選択する関数
@@ -114,7 +120,8 @@ class ClaudeApiService {
       //　リクエストのヘッダー設定
       final Map<String, String> headers = {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer $apiKey',
+        'anthropic-api-key': apiKey,
+        //'Authorization': 'Bearer $apiKey',
         'anthropic-version': '2023-06-01',
       };
 

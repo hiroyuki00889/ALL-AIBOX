@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="9ucJxSqqLEflozJvduEJ" name="フォルダ・ファイル構造">
-        <mxGraphModel dx="816" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="346" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -122,7 +122,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="aRfhFLT_BcshqjKr9_iO" name="データフロー図">
-        <mxGraphModel dx="986" dy="1596" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1312" dy="1596" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -304,7 +304,7 @@
                     <mxGeometry x="270" y="-510" width="120" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="lz9357n2-lCbHssZZ0-b-53" value="auth_service" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="30" y="-120" width="120" height="40" as="geometry"/>
+                    <mxGeometry x="30" y="-90" width="120" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="lz9357n2-lCbHssZZ0-b-54" value="auth_provider" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="220" y="-120" width="120" height="40" as="geometry"/>
@@ -335,6 +335,98 @@
                 </mxCell>
                 <mxCell id="X-lSmhhu1Ga_QCH2wFfo-2" value="Text" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="50" y="-240" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="F2jEgE30PFygHAKyPj01-1" value="auth_service.dart データフロー図" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="-1130" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="F2jEgE30PFygHAKyPj01-3" value="" style="swimlane;startSize=0;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="-1090" width="820" height="470" as="geometry"/>
+                </mxCell>
+                <mxCell id="F2jEgE30PFygHAKyPj01-4" value="class AuthService" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="F2jEgE30PFygHAKyPj01-3" vertex="1">
+                    <mxGeometry x="5" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="F2jEgE30PFygHAKyPj01-5" value="Future&amp;lt;UserCredential&amp;gt; signUpWithEmailAndPassword({&lt;div&gt;required Stringemail,&lt;/div&gt;&lt;div&gt;required String password,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;)} async&lt;/span&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=70;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="F2jEgE30PFygHAKyPj01-3" vertex="1">
+                    <mxGeometry x="10" y="30" width="260" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="F2jEgE30PFygHAKyPj01-6" value="新規ユーザーを作成する機能" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="F2jEgE30PFygHAKyPj01-5" vertex="1">
+                    <mxGeometry y="70" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="F2jEgE30PFygHAKyPj01-7" value="メールアドレスとパスワードを受け取り、Firebaseに新規ユーザーを登録" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="F2jEgE30PFygHAKyPj01-5" vertex="1">
+                    <mxGeometry y="100" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="F2jEgE30PFygHAKyPj01-8" value="エラー発生時、_handleAuthExceptionで適切なエラーメッセージに変換" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="F2jEgE30PFygHAKyPj01-5" vertex="1">
+                    <mxGeometry y="130" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-2" value="&lt;span style=&quot;color: rgb(63, 63, 63);&quot;&gt;Stream&amp;lt;User?&amp;gt; get authStateChanges =&amp;gt; _auth.authStateChanges();&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="F2jEgE30PFygHAKyPj01-3">
+                    <mxGeometry x="460" width="250" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-3" value="User? get currentUser =&amp;gt; _auth.currentUser;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="F2jEgE30PFygHAKyPj01-3">
+                    <mxGeometry x="190" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-12" value="Future&amp;lt;UserCredential&amp;gt; signInWithEmailAndPassword({&lt;div&gt;required Stringemail,&lt;/div&gt;&lt;div&gt;required String password,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;)} async&lt;/span&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=70;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="F2jEgE30PFygHAKyPj01-3">
+                    <mxGeometry x="280" y="30" width="260" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-13" value="既存ユーザーのサインイン処理" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="d13G3GtGiOfGMznZqrHO-12">
+                    <mxGeometry y="70" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-14" value="メールアドレスとパスワードを使って認証" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="d13G3GtGiOfGMznZqrHO-12">
+                    <mxGeometry y="100" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-15" value="エラー発生時、_handleAuthExceptionで適切なエラーメッセージに変換" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="d13G3GtGiOfGMznZqrHO-12">
+                    <mxGeometry y="130" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-16" value="Future&amp;lt;UserCredential&amp;gt; signInWithGoogle() async" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="F2jEgE30PFygHAKyPj01-3">
+                    <mxGeometry x="10" y="200" width="260" height="240" as="geometry">
+                        <mxRectangle x="10" y="230" width="310" height="70" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-20" value="GoogleSignInAccount? googleUser = await _googleSignIn.signIn();" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="d13G3GtGiOfGMznZqrHO-16">
+                    <mxGeometry y="50" width="260" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-17" value="GoogleSignInAuthentication googleAuth = await googleUser.authentication;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="d13G3GtGiOfGMznZqrHO-16">
+                    <mxGeometry y="90" width="260" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-22" value="credential = GoogleAiuthProvider.credential(&lt;div&gt;accessToken: googleAuth.accessToken,&lt;/div&gt;&lt;div&gt;idToken: googleAuth.idtoken,&lt;/div&gt;&lt;div&gt;);&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="d13G3GtGiOfGMznZqrHO-16">
+                    <mxGeometry y="130" width="260" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-21" value="Googleアカウントを使ったFirebaseサインイン機能" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="d13G3GtGiOfGMznZqrHO-16">
+                    <mxGeometry y="180" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-19" value="Firebase 認証エラーと一般的なエラーを分けて処理" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="d13G3GtGiOfGMznZqrHO-16">
+                    <mxGeometry y="210" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-23" value="Futer&amp;lt;void&amp;gt; signOut() async" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="F2jEgE30PFygHAKyPj01-3">
+                    <mxGeometry x="280" y="200" width="260" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-24" value="ユーザーをサインアウトする機能" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="d13G3GtGiOfGMznZqrHO-23">
+                    <mxGeometry y="50" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-25" value="GoogleとFirebaseの両方からサインアウト処理を行う" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="d13G3GtGiOfGMznZqrHO-23">
+                    <mxGeometry y="80" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-27" value="Future&amp;lt;void&amp;gt; sendPasswordResetEmail&lt;div&gt;(String email) async&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="F2jEgE30PFygHAKyPj01-3">
+                    <mxGeometry x="280" y="320" width="260" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-28" value="パスワードリセットするためのメールを送信する機能" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="d13G3GtGiOfGMznZqrHO-27">
+                    <mxGeometry y="50" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-29" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;エラー発生時、_handleAuthExceptionで適切なエラーメッセージに変換&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="d13G3GtGiOfGMznZqrHO-27">
+                    <mxGeometry y="80" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-54" value="Exception _handleAuthException&lt;div&gt;(FirebaseAuthException e)&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="F2jEgE30PFygHAKyPj01-3">
+                    <mxGeometry x="550" y="30" width="260" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-55" value="Firebase認証から返されるエラーコードを適切なメッセージに変換" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="d13G3GtGiOfGMznZqrHO-54">
+                    <mxGeometry y="50" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-56" value="未知のエラーはエラーメッセージをそのまま表示" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="d13G3GtGiOfGMznZqrHO-54">
+                    <mxGeometry y="80" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="W4uDJ90vmmHPgK-RhbnZ-1" value="メールアドレスとパスワード、Google認証でのサインイン・新規ユーザー登録、サインアウト、ユーザー情報管理" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="-5" y="-140" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="d13G3GtGiOfGMznZqrHO-1" value="_auth = FirebaseAuth.instance;&lt;div&gt;_googleSignIn = GoogleSignIn();&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="-1140" width="240" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

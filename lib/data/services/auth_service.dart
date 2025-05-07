@@ -1,111 +1,108 @@
-import 'package:hive/hive.dart';
-import '../models/user.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
-  final Box _authBox = Hive.box('authBox');
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
-  // Sign in with email and password
-  Future<User?> signIn(String email, String password) async {
+  // 現在のユーザーを取得
+  User? get currentUser => _auth.currentUser;
+
+  // 認証状態の変更を監視するStream
+  Stream<User?> get authStateChanges => _auth.authStateChanges();
+
+  // メールとパスワードでサインアップ
+  Future<UserCredential> signUpWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
     try {
-      // Simulate network request
-      await Future.delayed(const Duration(seconds: 1));
-
-      // In a real app, you would verify credentials against a backend
-      // For this example, we'll just create a mock user if credentials match
-      if (email.isNotEmpty && password.isNotEmpty) {
-        final user = User(
-          id: 'user_${DateTime.now().millisecondsSinceEpoch}',
+      return await _auth.createUserWithEmailAndPassword(
           email: email,
-        );
-
-        // Save user to local storage
-        await _saveUserToLocal(user);
-        return user;
-      }
-      return null;
-    } catch (e) {
-      print('Sign in error: $e');
-      return null;
+          password: password
+      );
+    } on FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
     }
   }
 
-  // Sign in with Google
-  Future<User?> signInWithGoogle() async {
-    try {
-      // In a real app, you would implement Google Sign-In
-      // For this example, we'll create a mock user
-      await Future.delayed(const Duration(seconds: 1));
+  // メールとパスワードでサインイン
+  Future<UserCredential> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    try{
+      return await _auth.signInWithEmailAndPassword(
+          email: email,
+          password: password
+      );
+    } on FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    }
+  }
 
-      final user = User(
-        id: 'google_user_${DateTime.now().millisecondsSinceEpoch}',
-        email: 'google_user@example.com',
+  // Google認証でサインイン
+  Future<UserCredential?> signInWithGoogle() async {
+    try {
+      // Googleサインインフローを開始
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+
+      if (googleUser == null) {
+        throw Exception('Google認証に失敗しました');
+      }
+
+      // 認証情報を取得
+      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+      // Firebaseで使用する認証情報を作成
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
       );
 
-      // Save user to local storage
-      await _saveUserToLocal(user);
-      return user;
+      // Firebase認証を実行
+      return await _auth.signInWithCredential(credential);
+    } on FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
     } catch (e) {
-      print('Google sign in error: $e');
-      return null;
+      throw Exception('Google認証でのサインインに失敗しました： ${e.toString()}');
     }
   }
 
-  // Register a new user
-  Future<User?> register(String email, String password) async {
-    try {
-      // Simulate network request
-      await Future.delayed(const Duration(seconds: 1));
-
-      // In a real app, you would register the user with a backend
-      // For this example, we'll just create a mock user
-      if (email.isNotEmpty && password.isNotEmpty) {
-        final user = User(
-          id: 'user_${DateTime.now().millisecondsSinceEpoch}',
-          email: email,
-        );
-
-        // Save user to local storage
-        await _saveUserToLocal(user);
-        return user;
-      }
-      return null;
-    } catch (e) {
-      print('Registration error: $e');
-      return null;
-    }
-  }
-
-  // Sign out
+  // サインアウト
   Future<void> signOut() async {
-    await _authBox.delete('currentUser');
+    await _googleSignIn.signOut();
+    await _auth.signOut();
   }
 
-  // Get current user
-  User? getCurrentUser() {
-    final userData = _authBox.get('currentUser');
-    if (userData != null) {
-      return User.fromJson(Map<String, dynamic>.from(userData));
-    }
-    return null;
-  }
-
-  // Update user's buddy prefix
-  Future<void> updateBuddyPrefix(String prefix) async {
-    final userData = _authBox.get('currentUser');
-    if (userData != null) {
-      final user = User.fromJson(Map<String, dynamic>.from(userData));
-      final updatedUser = User(
-        id: user.id,
-        email: user.email,
-        buddyPrefix: prefix,
-      );
-
-      await _saveUserToLocal(updatedUser);
+  // パスワードリセットメールの送信
+  Future<void> sendPasswordResetEmail(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
     }
   }
 
-  // Save user to local storage
-  Future<void> _saveUserToLocal(User user) async {
-    await _authBox.put('currentUser', user.toJson());
+  // エラーハンドリング
+  Exception _handleAuthException(FirebaseAuthException e) {
+    switch (e.code) {
+      case 'user-not-found':
+        return Exception('ユーザーが見つかりませんでした。');
+      case 'wrong-password':
+        return Exception('パスワードが間違っています。');
+      case 'email-already-in-use':
+        return Exception('このメールアドレスは既に使用されています。');
+      case 'weak-password':
+        return Exception('パスワードが弱すぎます。12文字以上の英大文字、英子文字、数字、記号を組み合わせてください。');
+      case 'invalid-email':
+        return Exception('無効なメールアドレスです。');
+      case 'operation-not-allowed':
+        return Exception('この操作は許可されていません。');
+      case 'too-many-requests':
+        return Exception('リクエストが多すぎます。しばらく待ってから再試行してください。');
+      default:
+        return Exception('認証エラーが発生しました: ${e.message}');
+    }
   }
 }

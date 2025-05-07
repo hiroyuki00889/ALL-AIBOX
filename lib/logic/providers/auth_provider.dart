@@ -1,129 +1,133 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../data/services/auth_service.dart';
-import '../../data/models/user.dart';
 
 class AuthProvider extends ChangeNotifier {
+  // auth_serviceのクラスインスタンス
   final AuthService _authService = AuthService();
-  User? _currentUser;
+
+  User? _user;
   bool _isLoading = false;
   String? _error;
 
-  // Getters
-  User? get currentUser => _currentUser;
+  AuthProvider() {
+    _authService.authStateChanges.listen((User? user){
+      _user = user;
+      notifyListeners();
+    });
+  }
+
+  // ゲッター
+  User? get user => _user;
   bool get isLoading => _isLoading;
   String? get error => _error;
-  bool get isAuthenticated => _currentUser != null;
+  bool get isAuthenticated => _user != null;
 
-  // Constructor
-  AuthProvider() {
-    _loadCurrentUser();
-  }
-
-  // Load current user from local storage
-  Future<void> _loadCurrentUser() async {
-    _currentUser = _authService.getCurrentUser();
-    notifyListeners();
-  }
-
-  // Sign in with email and password
-  Future<bool> signIn(String email, String password) async {
-    _isLoading = true;
-    _error = null;
-    notifyListeners();
+  // メールとパスワードでサインアップ
+  Future<bool> signUpWithEmailAndPassword({
+    required String email,
+    required String password,
+}) async {
+    _setLoading(true); // ローディング中
+    _clearError();
 
     try {
-      final user = await _authService.signIn(email, password);
-
-      if (user != null) {
-        _currentUser = user;
-        _isLoading = false;
-        notifyListeners();
-        return true;
-      } else {
-        _error = 'Invalid email or password';
-        _isLoading = false;
-        notifyListeners();
-        return false;
-      }
+      await _authService.signUpWithEmailAndPassword(
+          email: email,
+          password: password,
+      );
+      _setLoading(false); // ローディング中解除
+      return true;
     } catch (e) {
-      _error = e.toString();
-      _isLoading = false;
-      notifyListeners();
+      _setError(e.toString()); // エラー文章当てはめ、UI更新
+      _setLoading(false); // ローディング中解除
       return false;
     }
   }
 
-  // Sign in with Google
+  // メールとパスワードでサインイン
+  Future<bool> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    _setLoading(true);
+    _clearError();
+
+    try {
+      await _authService.signInWithEmailAndPassword(
+          email: email,
+          password: password,
+      );
+      _setLoading(false);
+      return true;
+    } catch (e) {
+      _setError(e.toString());
+      _setLoading(false);
+      return false;
+    }
+  }
+
+  // Google認証でサインイン
   Future<bool> signInWithGoogle() async {
-    _isLoading = true;
-    _error = null;
-    notifyListeners();
+    _setLoading(true);
+    _clearError();
 
     try {
-      final user = await _authService.signInWithGoogle();
-
-      if (user != null) {
-        _currentUser = user;
-        _isLoading = false;
-        notifyListeners();
-        return true;
-      } else {
-        _error = 'Google sign-in failed';
-        _isLoading = false;
-        notifyListeners();
-        return false;
-      }
+      await _authService.signInWithGoogle();
+      _setLoading(false);
+      return true;
     } catch (e) {
-      _error = e.toString();
-      _isLoading = false;
-      notifyListeners();
+      _setError(e.toString());
+      _setLoading(false);
       return false;
     }
   }
 
-  // Register a new user
-  Future<bool> register(String email, String password) async {
-    _isLoading = true;
-    _error = null;
-    notifyListeners();
-
-    try {
-      final user = await _authService.register(email, password);
-
-      if (user != null) {
-        _currentUser = user;
-        _isLoading = false;
-        notifyListeners();
-        return true;
-      } else {
-        _error = 'Registration failed';
-        _isLoading = false;
-        notifyListeners();
-        return false;
-      }
-    } catch (e) {
-      _error = e.toString();
-      _isLoading = false;
-      notifyListeners();
-      return false;
-    }
-  }
-
-  // Sign out
+  // サインアウト
   Future<void> signOut() async {
-    await _authService.signOut();
-    _currentUser = null;
+    _setLoading(true);
+    _clearError();
+
+    try {
+      await _authService.signOut();
+    } catch (e) {
+      _setError(e.toString());
+    } finally {
+      _setLoading(false);
+    }
+  }
+
+  // パスワードリセットメールの送信
+  Future<bool> sendPasswordResetEmail(String email) async {
+    _setLoading(true);
+    _clearError();
+
+    try{
+      await _authService.sendPasswordResetEmail(email);
+      _setLoading(false);
+      return true;
+    } catch (e) {
+      _setError(e.toString());
+      _setLoading(false);
+      return false;
+    }
+  }
+
+  // ローディング状態の設定
+  void _setLoading(bool value) {
+    _isLoading = value;
     notifyListeners();
   }
 
-  // Update user's buddy prefix
-  Future<void> updateBuddyPrefix(String prefix) async {
-    try {
-      await _authService.updateBuddyPrefix(prefix);
-      await _loadCurrentUser(); // Reload user from storage
-    } catch (e) {
-      _error = e.toString();
-      notifyListeners();
-    }
+  // エラーの設定
+  void _setError(String error) {
+    _error = error;
+    notifyListeners();
+  }
+
+  // エラーのクリア
+  void _clearError() {
+    _error = null;
+    notifyListeners();
   }
 }
