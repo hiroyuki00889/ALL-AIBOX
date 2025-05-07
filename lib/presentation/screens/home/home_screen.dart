@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../../logic/providers/auth_provider.dart';
+import '../../../logic/providers/claude_chat_provider.dart';
 import '../../../core/theme.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,10 +13,21 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  void _startChat() {
-    // For now, we'll just navigate to the chat screen with a default buddy ID
-    // In a real app, you might want to select a buddy first
-    context.go('/chat?buddyId=default_buddy');
+  final TextEditingController _messageController = TextEditingController();  // テキスト入力で画面変化を付ける
+  final ScrollController _scrollController = ScrollController();  // スクロール可能なウィジェット（ListView、GridView、SingleChildScrollViewなど）を制御するためのクラス
+  String kariUser = 'ドラえもん';
+
+  void _sendMessage() async{
+    final message = _messageController.text.trim();   // 文章入力から前後の空白を取り除いく
+    if (message.isEmpty) return;
+
+    // プロバイダーを取得してメッセージを送信する
+    final chatProvider = Provider.of<ClaudeChatProvider>(context, listen: false);
+    if (!await chatProvider.checkInternetConnection()) return;
+    chatProvider.sendMessage(message);
+
+    _messageController.clear();
+    context.go('/buddy_chat');
   }
 
   void _openSettings() {
@@ -25,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final authProvider = Provider.of<AuthProvider>(context);
-    final user = authProvider.currentUser;
+    final user = kariUser/*authProvider.currentUser*/;
 
     return Scaffold(
       appBar: AppBar(
@@ -44,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              'あなたのBuddy${user?.buddyPrefix ?? ''}に相談してみましょう',
+              'あなたのBuddy${user/*?.buddyPrefix ?? ''*/}に相談してみましょう',
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
@@ -56,9 +68,19 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(8),
+    decoration: BoxDecoration(
+    border: Border.all(color: Colors.grey),
+    borderRadius: BorderRadius.circular(8),
+    ),
+
+              child: TextField(
+                controller: _messageController,
+                maxLines: null, // 複数行の入力を可能にする
+                keyboardType: TextInputType.multiline,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: const EdgeInsets.all(16),
+                ),
                 ),
               ),
             ),
@@ -67,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: ElevatedButton(
-              onPressed: _startChat,
+              onPressed: _sendMessage,
               style: AppTheme.primaryButtonStyle,
               child: const Text('相談する'),
             ),

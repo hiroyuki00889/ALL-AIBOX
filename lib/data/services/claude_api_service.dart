@@ -11,10 +11,23 @@ class ClaudeApiService {
   // APIのエンドポイントとキー
   final apiUrl = Uri.parse('https://api.anthropic.com/v1/messages');
   final String apiKey;
-  final String model = 'claude-3-sonnet-20240620';
+
+  final String model = 'claude-3-7-sonnet-20250219';
 
   // コンストラクタでAPIキーを初期化
-  ClaudeApiService() : apiKey = dotenv.env['API_KEY'] ?? '';
+  ClaudeApiService() : apiKey = dotenv.env['API_KEY'] ?? ''{
+    // デバッグ用（本番環境では削除すること）
+    print("APIKEY:"+apiKey);
+    print('API Key: ${apiKey.isNotEmpty ? "設定されています" : "空です"}');
+    if (apiKey.isEmpty) {
+      print('警告: API キーが設定されていません。.env ファイルを確認してください。');
+    }
+  }
+
+  Future<bool> checkInternetConnection() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    return connectivityResult != ConnectivityResult.none;
+  }
 
   // 会話の状況に応じて適切なプロンプトを選択する関数
   String selectAppropriatePrompt(String latestMessage, List<Map<String, dynamic>> history) {
@@ -99,24 +112,29 @@ class ClaudeApiService {
     return false;
   }
 
-
+  // claude_chat_providerのsendMessage()の途中から
   Future<String> sendMessage(String message, List<Map<String, dynamic>> history) async {
     try {
+      // 状況に応じたプロンプトを選択
+      String appropriatePrompt = selectAppropriatePrompt(message, history);
+
       //　リクエストのヘッダー設定
       final Map<String, String> headers = {
-        'Content-Type' : 'application/json',
-        'Authorization': 'Bearer $apiKey',
-        'authropic-version' : '2023-06-01',
+        'Content-Type': 'application/json',
+        'anthropic-api-key': apiKey,
+        //'Authorization': 'Bearer $apiKey',
+        'anthropic-version': '2023-06-01',
       };
 
       // リクエストボディの構築
       final body = jsonEncode({
         'model' : model,
+        'system' : appropriatePrompt,
         'messages' : [
           ...history, // 過去のメッセージ履歴
           {'role' : 'user', 'content' : message}, // 新しいユーザーメッセージ
         ],
-        'max_tokens' : 5000,
+        'max_tokens' : 8000,
       });
 
       // HTTP POSTリクエストの送信
@@ -125,6 +143,9 @@ class ClaudeApiService {
         headers: headers,
         body: body,
       );
+      // デバック用
+      print('レスポンスコード: ${response.statusCode}');
+      print('レスポンスボディ: ${response.body}');  // センシティブ情報に注意
 
       // レスポンスの処理
       if (response.statusCode == 200) {
@@ -134,7 +155,9 @@ class ClaudeApiService {
         // エラーハンドリング
         throw Exception('APIリクエスト失敗: ${response.statusCode} ${response.body}');
       }
-    } catch (e) {
+    } catch (e, stackTrace) {
+      print('エラーの詳細: $e');
+      print('スタックトレース: $stackTrace');
       // 例外処理
       throw Exception('メッセージ送信中にエラー発生： $e');
     }

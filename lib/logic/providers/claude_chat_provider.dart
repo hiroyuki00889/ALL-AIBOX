@@ -1,19 +1,19 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:uuid/uuid.dart';
 import '../../data/services/claude_api_service.dart';
 import '../../data/models/chat_message.dart';
 
-class ClaudeChatProvider extends ChangeNotifier {
-  final ClaudeApiService _apiService;
+class ClaudeChatProvider extends ChangeNotifier {   // ChangeNotifier:アプリケーションの状態をカプセル化,リスナーに変更を通知するnotifyListeners()の呼び出し
+  final ClaudeApiService _claudeApiService;
   final _uuid = Uuid(); // メッセージのユニークID生成用
-
   // 状態変数
   bool isLoading = false;
   String? error;
   List<ChatMessage> messages = [];
 
   // コンストラクタ　-　依存するサービスを注入
-  ClaudeChatProvider(this._apiService);
+  ClaudeChatProvider(this._claudeApiService);
 
   // APIに送信するためのメッセージ履歴形式に変換
   List<Map<String, dynamic>> get _messageHistory {
@@ -25,7 +25,14 @@ class ClaudeChatProvider extends ChangeNotifier {
     }).toList();
   }
 
-  // メッセージを送信し、応答を取得する関数
+  Future<bool> checkInternetConnection() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    return connectivityResult != ConnectivityResult.none;
+  }
+
+  /* メッセージを送信し、応答を取得する関数
+   * buddy_chat_screenのsendMessage()から
+   */
   Future<void> sendMessage(String text) async {
     if (text.trim().isEmpty) return;
 
@@ -33,20 +40,20 @@ class ClaudeChatProvider extends ChangeNotifier {
       // ローディング状態の開始
       isLoading = true;
       error = null;
-      notifyListeners();
+      notifyListeners();  // このモデルをリッスンしているウィジェットに再びbuildするよう指示します
 
       // 新しいユーザーメッセージを追加
       final userMessage = ChatMessage(
         id: _uuid.v4(),
         content: text,
-        isuserMessage: true,
+        isUserMessage: true,
         timestamp: DateTime.now(),
       );
-      messages.add(userMessage);
-      notifyListeners();
+      messages.add(userMessage); //チャット履歴<ChatMessage>のリストに追加
+      notifyListeners();  // このモデルをリッスンしているウィジェットに再びbuildするよう指示します
 
       // APIにメッセージを送信して応答を取得
-      final response = await _apiService.sendMessage(text, _messageHistory);
+      final response = await _claudeApiService.sendMessage(text, _messageHistory);
 
       // AIの応答メッセージを追加
       final assistantMessage = ChatMessage(
@@ -55,15 +62,14 @@ class ClaudeChatProvider extends ChangeNotifier {
         isUserMessage: false,
         timestamp: DateTime.now(),
       );
-      messages.add(assistantMessage);
-
+      messages.add(assistantMessage); //チャット履歴<ChatMessage>のリストに追加
     } catch (e) {
       // エラー状態の設定
       error = e.toString();
     } finally {
       // ローディング状態の終了
       isLoading = false;
-      notifyListeners();
+      notifyListeners();  // このモデルをリッスンしているウィジェットに再びbuildするよう指示します
     }
   }
 
@@ -71,6 +77,6 @@ class ClaudeChatProvider extends ChangeNotifier {
   void clearChat() {
     messages.clear();
     error = null;
-    notifyListeners();
+    notifyListeners();  // このモデルをリッスンしているウィジェットに再びbuildするよう指示します
   }
 }
