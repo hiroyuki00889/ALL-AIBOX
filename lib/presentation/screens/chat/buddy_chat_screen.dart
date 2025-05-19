@@ -32,8 +32,22 @@ class _BuddyChatScreenState extends State<BuddyChatScreen> {
   }
 
   void _loadMessages() {
-    // メッセージの初期化が必要な場合は、ここで実装します
-    // 現在、プロバイダーにすでに存在するメッセージを使用しています
+    // プロバイダーからメッセージを取得
+    final chatProvider = Provider.of<ClaudeChatProvider>(context, listen: false);
+
+    // メッセージがある場合は、画面を最下部にスクロール
+    if (chatProvider.messages.isNotEmpty) {
+      // UIの更新が完了した後にスクロール処理を実行
+      Future.delayed(const Duration(milliseconds: 100), () {
+        if (_scrollController.hasClients) {
+          _scrollController.animateTo(
+            _scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeOut,
+          );
+        }
+      });
+    }
   }
   // sendボタンを押したら実行
   void _sendMessage() {
@@ -116,7 +130,7 @@ class _BuddyChatScreenState extends State<BuddyChatScreen> {
                   color: Colors.red.shade100,
                   width: double.infinity,
                   child: Text(
-                    'Error: ${chatProvider.error}',
+                    'Error: ${chatProvider.error}', // エラーテキスト
                     style: TextStyle(color: Colors.red.shade900),
                   ),
                 ),

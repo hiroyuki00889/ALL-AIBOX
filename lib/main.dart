@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_flutter4/presentation/screens/auth/splash_screen.dart';
+import 'package:ALL_AIBOX/presentation/screens/auth/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';

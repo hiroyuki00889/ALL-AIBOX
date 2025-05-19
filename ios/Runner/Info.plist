@@ -2,17 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleURLTypes</key>
-<array>
-   <dict>
-       <key>CFBundleTypeRole</key>
-       <string>Editor</string>
-       <key>CFBundleURLSchemes</key>
-       <array>
-           <string>com.googleusercontent.apps.100214415027-7dkek7soouo1m0psgt6t70icv5lj0hiv</string>
-       </array>
-   </dict>
-</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -56,5 +45,25 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<!-- Google Sign-in Section -->
+	<key>CFBundleURLTypes</key>
+    <array>
+       <dict>
+           <key>CFBundleTypeRole</key>
+           <string>Editor</string>
+           <key>CFBundleURLSchemes</key>
+           <array>
+           <!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
+               <string>com.googleusercontent.apps.100214415027-7dkek7soouo1m0psgt6t70icv5lj0hiv</string>
+           </array>
+       </dict>
+    </array>
+    <!-- End of the Google Sign-in Section -->
+        <key>NSLocalNetworkUsageDescription</key>
+        <string>このアプリはデバッグのためにローカルネットワークを使用します</string>
+        <key>NSBonjourServices</key>
+        <array>
+            <string>_dartobservatory._tcp</string>
+        </array>
 </dict>
 </plist>

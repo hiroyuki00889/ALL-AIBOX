@@ -28,9 +28,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   void _loadUserSettings() {
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
-    if (authProvider.currentUser != null && authProvider.currentUser!.buddyPrefix != null) {
-      _buddyPrefixController.text = authProvider.currentUser!.buddyPrefix!;
-    }
+    // if (authProvider.currentUser != null && authProvider.currentUser!.buddyPrefix != null) {
+    //   _buddyPrefixController.text = authProvider.currentUser!.buddyPrefix!;
+    // }
 
     // In a real app, you'd load dark mode setting from local storage
     setState(() {
@@ -40,7 +40,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   void _updateBuddyPrefix() async {
     final authProvider = Provider.of<AuthProvider>(context, listen: false);
-    await authProvider.updateBuddyPrefix(_buddyPrefixController.text.trim());
+    //await authProvider.updateBuddyPrefix(_buddyPrefixController.text.trim());
 
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(

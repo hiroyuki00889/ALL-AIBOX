@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../../logic/providers/auth_provider.dart';
 import '../../../core/theme.dart';
-import 'package:test_flutter4/firebase_options.dart';
+import 'package:ALL_AIBOX/firebase_options.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -235,7 +235,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   OutlinedButton.icon(
                     onPressed: _signInWithGoogle,
                     icon: Image.asset(
-                      'assets/images/google_logo.png',
+                      'assets/images/ios_light_sq_ctn@1x.png',
                       height: 24,
                     ),
                     label: const Text('Googleでログイン'),

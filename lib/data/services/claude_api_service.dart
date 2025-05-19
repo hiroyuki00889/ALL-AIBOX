@@ -121,8 +121,7 @@ class ClaudeApiService {
       //　リクエストのヘッダー設定
       final Map<String, String> headers = {
         'Content-Type': 'application/json',
-        'anthropic-api-key': apiKey,
-        //'Authorization': 'Bearer $apiKey',
+        'x-api-key': apiKey,
         'anthropic-version': '2023-06-01',
       };
 
